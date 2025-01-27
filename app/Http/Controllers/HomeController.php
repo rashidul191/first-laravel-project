@@ -11,7 +11,7 @@ class HomeController extends Controller
         $num1 = $request->num1;
         $num2 = $request->num2;
         $sum = $num1 + $num2;
-        return view("Home", array(
+        return view("Layout", array(
             "sum" => $sum,
         ));
     }
