@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 200);
             $table->string('short_des', 500);
             $table->string('image', 200);
-            
+
             // Foreign Key
             $table->unsignedBigInteger('product_id')->unique();
 
@@ -25,7 +25,7 @@ return new class extends Migration
 
             $table->timestamp("created_at")->useCurrent();
             $table->timestamp("updated_at")->useCurrent()->useCurrentOnUpdate();
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
