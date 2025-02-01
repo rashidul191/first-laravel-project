@@ -11,10 +11,19 @@
 </head>
 
 <body>
-    <h1 class="text-success">Hi</h1>
+
+    {{-- Header Section Start  --}}
+    @include('Layout.header')
+    {{-- Header Section End  --}}
+
+    {{-- Page Main Content Start  --}}
+    @yield('page-main-content')
+    {{-- Page Main Content End  --}}
 
 
-
+    {{-- Footer Section Start  --}}
+    @include('Layout.footer')
+    {{-- Footer Section End  --}}
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 </body>

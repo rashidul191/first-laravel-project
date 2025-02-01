@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ HomeController::class, "page"]);
+Route::get('/', function () {
+    return view("welcome");
+});
 
-
-
-
+Route::get("/contact", function () {
+    return view('Contact');
+});
