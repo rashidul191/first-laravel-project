@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class DemoController extends Controller
 {
-    public function demoController()
+    public function demoController(Request $request)
     {
 
         // $users = DB::table("users")->first();
@@ -20,13 +20,13 @@ class DemoController extends Controller
 
         // Join
         // Inner Join
-        $users = DB::table('products')->join('categories', 'products.category_id', '=', 'categories.id')->get();
+        // $users = DB::table('products')->join('categories', 'products.category_id', '=', 'categories.id')->get();
 
-
+        $users = DB::table('users')->where('id', $request->id)->update($request->input());
 
 
         // return view('Home', compact('users'));
 
-        return $users;
+        return  $users;
     }
 }

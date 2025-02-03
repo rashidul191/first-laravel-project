@@ -23,4 +23,4 @@ Route::get("/contact", function () {
     return view('Contact');
 });
 
-Route::get('/demo', [DemoController::class, "demoController"]);
+Route::post('/test/{id}', [DemoController::class, "demoController"]);
