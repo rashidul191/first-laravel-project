@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('product_carts', function (Blueprint $table) {
             $table->id();
 
-
-
             // Foreign Key
             $table->string('user_email', 50);
             $table->unsignedBigInteger("product_id");
