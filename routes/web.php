@@ -3,6 +3,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,4 +30,8 @@ Route::post('/test/{id}', [DemoController::class, "demoController"]);
 Route::get('/all-brand', [BrandController::class, 'index'])->name('all-brand.index');
 Route::get('/show-brand/{id}', [BrandController::class, 'show'])->name('all-brand.show');
 Route::put('/update-brand/{id}', [BrandController::class, 'update'])->name('all-brand.update');
-Route::post('/delete-brand/{id}', [BrandController::class, 'destroy'])->name('all-brand.destroy');
+Route::patch('/update-or-create-brand/{id}', [BrandController::class, 'updateOrCreate'])->name('all-brand.update-or-create');
+Route::delete('/delete-brand/{id}', [BrandController::class, 'destroy'])->name('all-brand.destroy');
+
+Route::get('/all-product', [ProductController::class, 'index'])->name('all-product.index');
+Route::get('/product-increment/{id}', [ProductController::class, 'productIncrement'])->name('product.increment');
