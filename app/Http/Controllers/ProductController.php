@@ -29,7 +29,15 @@ class ProductController extends Controller
         // $result = Product::oldest()->get();
         // $result = Product::groupBy('price')->get();
         // $result = Product::groupBy('price')->having('price', '>', 1000)->get();
-        $result = Product::skip(10)->take(10)->get();
+        // $result = Product::skip(10)->take(10)->get();
+
+        /* Pagination */
+        // $result = Product::simplePaginate(3);
+        $result = Product::paginate(
+            $perPage = 10,
+            $column = ['*'],
+            $pageName = "ItemNumber"
+        );
 
 
         return $result;
