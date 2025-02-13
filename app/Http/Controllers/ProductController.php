@@ -21,7 +21,18 @@ class ProductController extends Controller
 
         // return Product::select('title', 'price')->get();
         // return Product::select('title')->distinct()->get();
-        return Product::where('price', '=', '390')->get();
+        // return Product::where('price', '=', '390')->get();
+
+        // $result = Product::orderBy('id', 'desc')->get();
+        // $result = Product::inRandomOrder()->get();
+        // $result = Product::latest()->get();
+        // $result = Product::oldest()->get();
+        // $result = Product::groupBy('price')->get();
+        // $result = Product::groupBy('price')->having('price', '>', 1000)->get();
+        $result = Product::skip(10)->take(10)->get();
+
+
+        return $result;
     }
 
     public function productIncrement($id)
