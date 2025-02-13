@@ -4,6 +4,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +37,8 @@ Route::delete('/delete-brand/{id}', [BrandController::class, 'destroy'])->name('
 
 Route::get('/all-product', [ProductController::class, 'index'])->name('all-product.index');
 Route::get('/product-increment/{id}', [ProductController::class, 'productIncrement'])->name('product.increment');
+
+
+Route::get('/all-users', [UserController::class, 'index'])->name('all-users.index');
+Route::get('/all-profile', [ProfileController::class, 'index'])->name('all-profile.index');
+Route::get('/all-profile-rew', [ProfileController::class, 'profileWithReview']);

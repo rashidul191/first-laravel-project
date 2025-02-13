@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ProductReview extends Model
 {
     use HasFactory;
+
+    public function reviewProfile()
+    {
+        return $this->belongsTo(Profile::class);
+    }
 }

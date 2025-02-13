@@ -48,4 +48,10 @@ class ProductController extends Controller
         // return Product::where('id', $id)->increment('price', 50);
         return Product::where('id', $id)->decrement('price', 50);
     }
+
+    // Many To Many
+    public function productWithProfile()
+    {
+        return Product::with('profile')->get();
+    }
 }
